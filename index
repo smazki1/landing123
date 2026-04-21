@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ליאת כהן | יום שינוי - מפסיקים לדבר, מתחילים לזוז</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        authority: '#1A2B3C',
+                        velocity: '#FF5722',
+                        clarity: '#F4F7F6',
+                    },
+                    fontFamily: {
+                        sans: ['Rubik', 'sans-serif'],
+                        heading: ['Assistant', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .section-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .section-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.4);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #FF5722 15%, #FF5722 85%, transparent);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1A2B3C 0%, #34495E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased font-sans">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-authority tracking-tighter flex items-center">
+                ליאת כהן <span class="text-velocity mr-1">.</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-reverse space-x-8 text-sm font-medium">
+                <a href="#process" class="hover:text-velocity transition-colors">איך זה עובד?</a>
+                <a href="#pricing" class="hover:text-velocity transition-colors">השקעה</a>
+                <a href="#faq" class="hover:text-velocity transition-colors">שאלות נפוצות</a>
+                <a href="#contact" class="bg-authority text-white px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-all btn-glow">
+                    שיחת ייעוץ חינם
+                </a>
+            </div>
+            <button class="md:hidden text-authority" id="mobileMenuBtn">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center pt-24 pb-12 bg-clarity overflow-hidden">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="section-animate" id="hero-content">
+                <div class="inline-block px-4 py-1.5 bg-orange-100 text-velocity rounded-full text-sm font-bold mb-6">
+                    הזמן שלכם שווה יותר מדיבורים
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-heading font-extrabold text-authority leading-[1.1] mb-8">
+                    הלופ מסתיים <span class="text-velocity italic">היום</span>.
+                </h1>
+                <p class="text-xl lg:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl">
+                    8 שעות של אמת שיהפכו תקיעות צוותית של חודשים לתוכנית עבודה מוסכמת שכולם מחויבים אליה. 
+                    <span class="font-bold text-authority">בלי תיאוריות – רק החלטות.</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="#contact" class="bg-velocity text-white text-center px-10 py-5 rounded-2xl font-bold text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-orange-200">
+                        קבעו יום שינוי עכשיו
+                    </a>
+                    <a href="#process" class="bg-white border-2 border-authority text-authority text-center px-10 py-5 rounded-2xl font-bold text-lg hover:bg-authority hover:text-white transition-all">
+                        איך זה עובד?
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex items-center gap-4 text-sm text-gray-500">
+                    <div class="flex -space-x-reverse space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-white"></div>
+                        <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-white"></div>
+                        <div class="w-8 h-8 rounded-full bg-gray-500 border-2 border-white"></div>
+                    </div>
+                    <span>עזרתי ל-150+ צוותים לצאת מהתקיעות</span>
+                </div>
+            </div>
+            
+            <div class="relative section-animate hidden lg:block">
+                <div class="absolute inset-0 bg-velocity/10 rounded-3xl rotate-3"></div>
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Team Work" class="relative z-10 rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+        </div>
+        
+        <!-- Decorative element -->
+        <div class="absolute bottom-0 right-0 w-1/3 h-1/3 opacity-20 pointer-events-none">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                <path fill="#FF5722" d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-46.5C87.4,-33.9,90,-16.9,89.1,-0.5C88.2,15.9,83.8,31.7,75.4,45.2C66.9,58.7,54.4,69.9,40.3,77.4C26.1,84.9,10.3,88.7,-4.8,85.9C-19.9,83.1,-34.3,73.6,-47.4,63.6C-60.5,53.6,-72.4,43.1,-78.9,29.9C-85.4,16.7,-86.6,0.8,-83.4,-14C-80.2,-28.8,-72.6,-42.6,-61.8,-53.4C-51,-64.2,-37,-72,-23,-79.2C-9,-86.4,5,-93,19.9,-85.8C34.8,-78.6,44.7,-76.4,44.7,-76.4Z" transform="translate(100 100)" />
+            </svg>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-20 section-animate">
+                <h2 class="text-4xl lg:text-5xl font-heading font-bold text-authority mb-6">מרגיש שהצוות תקוע בתוך עצמו?</h2>
+                <p class="text-xl text-gray-500">אם אתם חווים את אחד התרחישים הבאים, אתם לא צריכים עוד ישיבה, אתם צריכים שינוי.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group p-10 rounded-3xl bg-clarity border border-transparent hover:border-velocity transition-all duration-300 section-animate">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-velocity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-authority">תסכול ה"לופ"</h3>
+                    <p class="text-gray-600 leading-relaxed">אותן ישיבות, אותם דיונים, שום החלטה לא יוצאת לפועל באמת. הזמן עובר והבעיה רק גדלה.</p>
+                </div>
+                
+                <div class="group p-10 rounded-3xl bg-authority text-white transition-all duration-300 shadow-xl section-animate" style="transition-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-velocity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">בדידות המנהל</h3>
+                    <p class="text-blue-100 leading-relaxed">אתה מרגיש שכל האחריות עליך. הצוות מוכשר, אבל הם מחכים להוראות במקום לקחת בעלות אמיתית.</p>
+                </div>
+                
+                <div class="group p-10 rounded-3xl bg-clarity border border-transparent hover:border-velocity transition-all duration-300 section-animate" style="transition-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-authority">חרדת "עוד סדנה"</h3>
+                    <p class="text-gray-600 leading-relaxed">מכירים את הסדנאות שהן "נחמדות" אבל הכל חוזר לקדמותו? לא אצלי. אני לא מלמדת, אני עובדת איתכם.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-24 bg-authority text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 section-animate">
+                    <h2 class="text-4xl lg:text-5xl font-heading font-bold mb-8 leading-tight">6 שעות שמחליפות<br><span class="text-velocity">חצי שנה של התלבטויות</span></h2>
+                    <p class="text-xl text-blue-100 mb-12 leading-relaxed">
+                        השינוי שלכם לא זקוק לחודשים. הוא זקוק ליום אחד של אמת. אני מחלצת מהצוות את התשובות שכבר קיימות בחדר – מה שמבטיח אפס התנגדויות ויישום מיידי.
+                    </p>
+                    
+                    <div class="relative timeline-line pr-8 space-y-12">
+                        <div class="relative group">
+                            <div class="absolute -right-[41px] top-1.5 w-4 h-4 bg-velocity rounded-full border-4 border-authority z-10"></div>
+                            <h4 class="text-xl font-bold text-velocity mb-2">שעה 1: מיפוי הפערים</h4>
+                            <p class="text-blue-100/80">מבינים מה הצוות רואה ומה המנהל חושב – ואיפה הם לא נפגשים. כאן מתגלה האמת.</p>
+                        </div>
+                        
+                        <div class="relative group">
+                            <div class="absolute -right-[41px] top-1.5 w-4 h-4 bg-velocity rounded-full border-4 border-authority z-10"></div>
+                            <h4 class="text-xl font-bold text-velocity mb-2">שעות 2-3: חפירה לשורש</h4>
+                            <p class="text-blue-100/80">מפרידים בין הסימפטומים לבעיה האמיתית. אני שואלת את השאלות שאף אחד לא העז לשאול עד היום.</p>
+                        </div>
+                        
+                        <div class="relative group">
+                            <div class="absolute -right-[41px] top-1.5 w-4 h-4 bg-velocity rounded-full border-4 border-authority z-10"></div>
+                            <h4 class="text-xl font-bold text-velocity mb-2">שעות 4-5: בניית הפתרון</h4>
+                            <p class="text-blue-100/80">הצוות עצמו מציע ובוחר. מי שבחר – מיישם. אין צורך ב"שיווק" פנימי של המנהל.</p>
+                        </div>
+                        
+                        <div class="relative group">
+                            <div class="absolute -right-[41px] top-1.5 w-4 h-4 bg-velocity rounded-full border-4 border-authority z-10"></div>
+                            <h4 class="text-xl font-bold text-velocity mb-2">שעה 6: תוכנית פעולה</h4>
+                            <p class="text-blue-100/80">יוצאים עם רשימת משימות סגורה, תאריכי יעד ואחריות אישית מוצהרת מול כולם.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 section-animate flex justify-center">
+                    <div class="relative w-full max-w-lg aspect-square">
+                        <div class="absolute inset-0 bg-velocity blur-[100px] opacity-20"></div>
+                        <div class="relative z-10 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full w-full h-full flex flex-col items-center justify-center text-center p-12">
+                            <div class="text-6xl font-black mb-4">100%</div>
+                            <div class="text-2xl font-bold mb-4">מחויבות לתוצאה</div>
+                            <p class="text-blue-100/60 italic">"ביום אחד הצלחנו להזיז דברים שנתקעו חודשים על שולחן ההנהלה"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-clarity">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20 section-animate">
+                <h2 class="text-4xl lg:text-5xl font-heading font-bold text-authority mb-6">בוחרים בשינוי</h2>
+                <p class="text-xl text-gray-500">השקעה חד פעמית שמחזירה את עצמה כבר בבוקר שאחרי</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-12 rounded-3xl shadow-xl border-2 border-transparent hover:border-velocity transition-all duration-300 flex flex-col section-animate">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-authority mb-2">סדנת "יום שינוי"</h3>
+                        <p class="text-gray-500">עבודה אינטנסיבית וממוקדת עם כל הצוות</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-5xl font-black text-authority tracking-tight">₪4,500</span>
+                        <span class="text-gray-400 font-medium"> + מע"מ</span>
+                    </div>
+                    <ul class="space-y-5 mb-12 flex-grow">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-medium">שיחת הכנה ומיפוי עומק עם המנהל</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-medium">6 שעות הנחיה פרונטלית אינטנסיבית</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-medium">סיכום אופרטיבי ומשימות תוך 48 שעות</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="w-full bg-velocity text-white py-5 rounded-2xl font-bold text-lg text-center hover:bg-opacity-90 transition-all shadow-lg shadow-orange-100">
+                        הזמינו יום לצוות שלכם
+                    </a>
+                </div>
+                
+                <div class="bg-authority p-12 rounded-3xl shadow-xl text-white flex flex-col section-animate" style="transition-delay: 0.1s;">
+                    <div class="mb-8">
+                        <div class="inline-block px-3 py-1 bg-velocity rounded-full text-xs font-bold mb-3">הבחירה הפופולרית</div>
+                        <h3 class="text-2xl font-bold mb-2">ליווי מנהל אישי</h3>
+                        <p class="text-blue-100/60">למנהלים שרוצים להמשיך להוביל ולשמר תוצאות</p>
+                    </div>
+                    <div class="mb-8">
+                        <span class="text-5xl font-black tracking-tight">₪2,800</span>
+                        <span class="text-blue-100/60 font-medium"> / לחודש</span>
+                    </div>
+                    <ul class="space-y-5 mb-12 flex-grow text-blue-100">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-velocity flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-medium">פגישה שבועית (45 דק') בזום או פרונטלי</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-velocity flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-medium">זמינות בוואטסאפ לדילמות ניהוליות דחופות</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-velocity flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="font-medium">ליווי צמוד בהטמעת החלטות הסדנה</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="w-full bg-white text-authority py-5 rounded-2xl font-bold text-lg text-center hover:bg-clarity transition-all">
+                        לשיחת התאמה
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-4xl font-heading font-bold text-authority mb-16 text-center">שאלות שחשוב לשאול</h2>
+            <div class="space-y-8">
+                <div class="p-8 bg-clarity rounded-2xl section-animate">
+                    <h4 class="text-xl font-bold mb-4 text-authority flex items-center gap-3">
+                        <span class="text-velocity">01</span>
+                        "כבר עשינו סדנאות בעבר, מה שונה כאן?"
+                    </h4>
+                    <p class="text-gray-600 leading-relaxed">סדנאות תוכן רגילות מלמדות ידע – וידע נוטה להתנדף. אני לא באה ללמד, אני באה להנחות תהליך עבודה חי על הבעיות שלכם. כאן יוצאים עם החלטות אופרטיביות ומחויבות אישית, לא עם עוד מחברת מלאה בטיפים.</p>
+                </div>
+                
+                <div class="p-8 bg-clarity rounded-2xl section-animate" style="transition-delay: 0.1s;">
+                    <h4 class="text-xl font-bold mb-4 text-authority flex items-center gap-3">
+                        <span class="text-velocity">02</span>
+                        "הצוות שלי מאוד ציני לשינויים, זה יעבוד?"
+                    </h4>
+                    <p class="text-gray-600 leading-relaxed">ציניות היא בדרך כלל סימן שלמישהו פעם היה אכפת והוא התאכזב. אני משתמשת בציניות כחומר עבודה. ברגע שהצוות רואה שמישהו באמת מקשיב וחופר לשורש הבעיה בלי פחד, הציניות הופכת למנוע של מחויבות.</p>
+                </div>
+                
+                <div class="p-8 bg-clarity rounded-2xl section-animate" style="transition-delay: 0.2s;">
+                    <h4 class="text-xl font-bold mb-4 text-authority flex items-center gap-3">
+                        <span class="text-velocity">03</span>
+                        "אין לנו זמן להשבית יום שלם מחוץ למשרד"
+                    </h4>
+                    <p class="text-gray-600 leading-relaxed">שאלה הפוכה: כמה זמן עולה לכם לשבת עוד חצי שנה על אותה בעיה בישיבות שבועיות עקרות? יום אחד של ריכוז הוא חיסכון אדיר בזמן, באנרגיה ניהולית ובכסף של הארגון.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-authority text-white">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="section-animate">
+                <h2 class="text-4xl lg:text-5xl font-heading font-bold mb-8">מוכנים לחתוך את הערפל?</h2>
+                <p class="text-xl text-blue-100 mb-8 max-w-md leading-relaxed">
+                    בואו נבין יחד בשיחה קצרה של 15 דקות אם הצוות שלכם באמת בשל ל"יום שינוי" ומה פריצת הדרך שאתם הכי צריכים עכשיו.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-velocity/20 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-velocity" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.546 4.546l.773-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        </div>
+                        <span class="text-lg">054-XXXXXXX</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-velocity/20 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-velocity" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                        </div>
+                        <span class="text-lg">liat@change-day.co.il</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-10 rounded-3xl shadow-2xl section-animate">
+                <form id="contactForm" class="space-y-5">
+                    <div>
+                        <label class="block text-authority text-sm font-bold mb-2">שם מלא</label>
+                        <input type="text" placeholder="איך קוראים לך?" class="w-full px-5 py-4 bg-clarity rounded-xl border-2 border-transparent focus:border-velocity focus:bg-white outline-none text-authority transition-all" required>
+                    </div>
+                    <div>
+                        <label class="block text-authority text-sm font-bold mb-2">אימייל עסקי</label>
+                        <input type="email" placeholder="mail@company.com" class="w-full px-5 py-4 bg-clarity rounded-xl border-2 border-transparent focus:border-velocity focus:bg-white outline-none text-authority transition-all" required>
+                    </div>
+                    <div>
+                        <label class="block text-authority text-sm font-bold mb-2">טלפון</label>
+                        <input type="tel" placeholder="05X-XXXXXXX" class="w-full px-5 py-4 bg-clarity rounded-xl border-2 border-transparent focus:border-velocity focus:bg-white outline-none text-authority transition-all" required>
+                    </div>
+                    <div>
+                        <label class="block text-authority text-sm font-bold mb-2">קצת על התקיעות (אופציונלי)</label>
+                        <textarea rows="3" placeholder="איפה אתם מרגישים שזה לא עובד?" class="w-full px-5 py-4 bg-clarity rounded-xl border-2 border-transparent focus:border-velocity focus:bg-white outline-none text-authority transition-all"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-velocity text-white py-5 rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all shadow-lg shadow-orange-100 btn-glow">
+                        אני רוצה שקט מנטלי
+                    </button>
+                </form>
+                <div id="successMsg" class="hidden text-center py-10">
+                    <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h4 class="text-2xl font-bold text-authority mb-2">נשלח בהצלחה!</h4>
+                    <p class="text-gray-500 text-lg">אחזור אליך אישית תוך פחות מ-24 שעות.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white border-t border-gray-100 text-center">
+        <div class="container mx-auto px-6">
+            <div class="text-2xl font-extrabold text-authority mb-6">
+                ליאת כהן <span class="text-velocity">.</span>
+            </div>
+            <p class="text-gray-400 mb-6">© 2024 ליאת כהן | ליווי והנחיית פריצות דרך בצוותים והנהלות</p>
+            <div class="flex justify-center gap-6">
+                <a href="#" class="text-gray-400 hover:text-authority transition-colors">LinkedIn</a>
+                <a href="#" class="text-gray-400 hover:text-authority transition-colors">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-animate').forEach(el => observer.observe(el));
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md', 'py-2');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('shadow-md', 'py-2');
+                nav.classList.add('py-4');
+            }
+        });
+
+        // Form handling
+        const contactForm = document.getElementById('contactForm');
+        const successMsg = document.getElementById('successMsg');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            contactForm.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+            // Here you would typically send data to your server
+        });
+
+        // Mobile menu simple toggle (logic could be expanded)
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        mobileMenuBtn.addEventListener('click', () => {
+            document.querySelector('nav div div.hidden').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
